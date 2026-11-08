@@ -1,0 +1,33 @@
+[package]
+name = "uwb"
+version = "0.1.0"
+description = "Universal Worldbuilding: construtor de universos ficcionais"
+authors = ["Giovanna"]
+license = "MIT"
+repository = "https://github.com/gioh-mkv/universal-worldbuilding"
+edition = "2024"
+
+[lib]
+name = "tauri_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }  # bundled inclui FTS5
+uuid = { version = "1", features = ["v7"] }
+thiserror = "1"
+sha2 = "0.10"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
