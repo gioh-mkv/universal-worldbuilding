@@ -25,7 +25,9 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["rpm"],
+    "targets": [
+      "rpm"
+    ],
     "category": "Productivity",
     "shortDescription": "Construtor de universos ficcionais",
     "longDescription": "Aplicativo local-first para criar, documentar e organizar universos ficcionais: entidades personalizadas, documentos com menções, relações e pesquisa.",
